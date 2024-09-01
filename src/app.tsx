@@ -10,6 +10,7 @@ import {
   FaMinus,
   FaEquals,
   FaPlusMinus,
+  FaGithub,
 } from "react-icons/fa6";
 
 interface IButton {
@@ -168,22 +169,31 @@ export default function App() {
   ];
 
   return (
-    <main className="p-6 absolute text-white/90 m-auto top-0 bottom-0 left-0 right-0 bg-gradient-to-bl from-slate-800 to-slate-900 h-max w-80 rounded-2xl shadow-[0px_0px_20px_hsla(0,0%,0%,.2),inset_0px_5px_5px_hsla(0,100%,100%,.06),inset_0px_-5px_10px_hsla(0,0%,0%,.3)]">
-      <div className="w-full flex px-2 flex-col items-end">
-        <h2 className="opacity-30 h-6">{upperText}</h2>
-        <h1 className="h-12 font-semibold text-5xl">{text}</h1>
-      </div>
-      <ul className="h-auto mt-4 grid grid-cols-4 grid-rows-5 gap-4 select-none">
-        {buttons.map((button, idx) => (
-          <Button
-            key={idx}
-            className={button?.className}
-            action={button.action}
-          >
-            {button.children}
-          </Button>
-        ))}
-      </ul>
-    </main>
+    <>
+      <main className="p-6 absolute text-white/90 m-auto top-0 bottom-0 left-0 right-0 bg-gradient-to-bl from-slate-800 to-slate-900 h-max w-80 rounded-2xl shadow-[0px_0px_20px_hsla(0,0%,0%,.2),inset_0px_5px_5px_hsla(0,100%,100%,.06),inset_0px_-5px_10px_hsla(0,0%,0%,.3)]">
+        <div className="w-full flex px-2 flex-col items-end">
+          <h2 className="opacity-30 h-6">{upperText}</h2>
+          <h1 className="h-12 font-semibold text-5xl">{text}</h1>
+        </div>
+        <ul className="h-auto mt-4 grid grid-cols-4 grid-rows-5 gap-4 select-none">
+          {buttons.map((button, idx) => (
+            <Button
+              key={idx}
+              className={button?.className}
+              action={button.action}
+            >
+              {button.children}
+            </Button>
+          ))}
+        </ul>
+      </main>
+      <a
+        href="https://github.com/hwberto/react-calculator"
+        className="absolute bottom-2 right-2 text-white text-sm p-2 rounded-md flex items-center gap-2 border border-white"
+      >
+        <FaGithub />
+        Source
+      </a>
+    </>
   );
 }
