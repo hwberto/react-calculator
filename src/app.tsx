@@ -37,6 +37,8 @@ export default function App() {
 
   const addNumber = (number: string) => {
     if (text.length < 8 && text === "0" && !upperText) setText(number);
+    else if (text.length < 8 && text === "-0" && !upperText)
+      setText(`-${number}`);
     else if (text.length < 8) setText(text + number);
   };
 
